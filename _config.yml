@@ -1,15 +1,15 @@
 markdown: rdiscount
 permalink: /:title/
-url: http://zerotoday.github.io
-name: zerotoday
-author: yutao
+url: http://iosboy.github.io
+name: iosboy
+author: tony
 qq: 570023580
 email: taoyu.developer@gmail.com
-duoshuo: zerotoday
+duoshuo: iosboy
 # beian: 浙ICP备12026616号
 # cnzz: 119959
 # weibo: 1885061391
-github: zerotoday
+github: iosboy
 pygments: true
 safe: true
 paginate: 20
