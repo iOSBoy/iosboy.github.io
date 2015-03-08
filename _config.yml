@@ -1,16 +1,16 @@
 markdown: rdiscount
 permalink: /:title/
 url: http://iosboy.github.io
-name: iosboy
-author: tony
+name: iOSBoy
+author: Tony
 qq: 570023580
 email: taoyu.developer@gmail.com
-duoshuo: iosboy
+duoshuo: TonyYu2015
 # beian: 浙ICP备12026616号
 # cnzz: 119959
 # weibo: 1885061391
-github: iosboy
+github: iOSBoy
 pygments: true
 safe: true
 paginate: 20
-about: "这里是 zerotoday 的个人博客，这里包含了部分个人的“折腾”过程、结论和成果，切换到分类模可以更快地找到感兴趣的内容，欢迎观赏、建议、拍砖……"
+about: "这里是 iOSBoy 的个人博客，这里包含了部分个人的“折腾”过程、结论和成果，切换到分类模可以更快地找到感兴趣的内容，欢迎观赏、建议、拍砖……"
