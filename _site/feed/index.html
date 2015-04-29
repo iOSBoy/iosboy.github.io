@@ -4,18 +4,28 @@
         xmlns:atom="http://www.w3.org/2005/Atom"
   >
   <channel>
-    <title>zerotoday</title>
-    <link href="http://zerotoday.github.io/feed/" rel="self" />
-    <link href="http://zerotoday.github.io" />
-    <lastBuildDate>2015-03-08T22:23:45+08:00</lastBuildDate>
+    <title>iOSBoy</title>
+    <link href="http://iosboy.github.io/feed/" rel="self" />
+    <link href="http://iosboy.github.io" />
+    <lastBuildDate>2015-04-29T10:59:29+08:00</lastBuildDate>
     <webMaster>taoyu.developer@gmail.com</webMaster>
     
     <item>
+      <title>如何打印一个菱形</title>
+      <link href="http://iosboy.github.io/how-to-pint-diamond/"/>
+      <pubDate>2015-04-29T00:00:00+08:00</pubDate>
+      <author>Tony</author>
+      <guid>http://iosboy.github.io/how-to-pint-diamond</guid>
+      <content:encoded><![CDATA[
+]]></content:encoded>
+    </item>
+    
+    <item>
       <title>解决 message sent to deallocated instance</title>
-      <link href="http://zerotoday.github.io/solve-message-sent-to-deallocated-instance/"/>
+      <link href="http://iosboy.github.io/solve-message-sent-to-deallocated-instance/"/>
       <pubDate>2015-02-09T15:12:02+08:00</pubDate>
-      <author>yutao</author>
-      <guid>http://zerotoday.github.io/solve-message-sent-to-deallocated-instance</guid>
+      <author>Tony</author>
+      <guid>http://iosboy.github.io/solve-message-sent-to-deallocated-instance</guid>
       <content:encoded><![CDATA[<h2>前言</h2>
 
 <p>iOS开发过程中经常遇到一个恶心的问题就是过度释放造成app奔溃。这种Crash出现的log信息量少。而且很难一眼看到问题出现在什么地方。唯一知道的信息就是这个Crash是因为内存管理不当过度释放的问题。这时候我们很多人（我也在其中）的解决方案时根据操作出现的奔溃来猜测可能时哪里的问题，然后去一行行review代码（体力活啊）。之前我一直用这种方法。这个方法在涉及到模块代码量不是很大的情况下还是计较有效的。但是一旦涉及到的代码量很大的情况比较复杂的情况下这种方法会让你抓狂。代码太多涉及到的文件很多你根本不知道哪里地方出问题了。在这种情况下你要想使用一行行review代码的方法那将花费你很多的时间还不一定能找到问题出在哪里。在这个过程中你会抓狂很多次，小伙伴们有没有。好了干货来了。接下来我们来看一下一种高效调试这种Cras的方法。</p>
