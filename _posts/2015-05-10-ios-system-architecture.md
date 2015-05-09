@@ -9,7 +9,6 @@ categories: iOS
 
 ---
 
----
 iOS 系统架构如图
 ![](../assets/6D80D0FF-7C18-4BA8-83C9-F2FFEFB66218.png)
 一、核心操作系统层(Core OS layer):
