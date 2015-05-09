@@ -1,7 +1,7 @@
 ---
 layout: post
 
-title: "解决 message sent to deallocated instance"
+title: "解决 Message Sent to Deallocated Instance"
 
 date: 2015-02-09 15:12:02 +0800
 

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Tony" />
+    <title>iOS System Architecture</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link href="/feed/" rel="alternate" title="Tony" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css" />
+    <link rel="stylesheet" href="/media/css/highlight.css" />
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>iOS System Architecture</h1>
+        </header>
+        <nav>
+        <span><a title="网站首页" class="" href="/">首页</a></span>
+        <span><a title="文章分类" class="" href="/categories/">分类</a></span>
+        <span><a title="标签索引" class="" href="/tags/">标签</a></span>
+        <!--<span><a title="友情链接" class="" href="/links/">链接</a></span>-->
+        <span><a title="留言交流" class="" href="/guestbook/">留言</a></span>
+        <span><a title="关于站长" class="" href="/about/">关于</a></span>
+        <span><a title="种子订阅" class="" href="/feed/" target="_blank">订阅</a></span>
+        </nav>
+        <article class="content">
+        <section class="meta">
+<span class="time">
+  <time datetime="2015-05-10">2015-05-10</time>
+</span>
+
+ | 
+<span class="categories">
+  分类
+  
+  <a href="/categories/#ios" title="ios">iOS</a>&nbsp;
+  
+</span>
+
+
+</section>
+<section class="post">
+<hr />
+
+<p>iOS 系统架构如图
+<img src="../assets/6D80D0FF-7C18-4BA8-83C9-F2FFEFB66218.png" alt="" />
+一、核心操作系统层(Core OS layer):
+<img src="../assets/28145516-73fbd86c5aaf41f4bc30c76a350452bf.jpg" alt="" /></p>
+
+<blockquote><ul>
+<li>Core OS是用FreeBSD和Mach所改写的Darwin</li>
+<li>提供了硬件驱动, 内存管理,程序管理,线程管理(POSIX),文件系统,网络(BSD Socket),标准输入输出等功能</li>
+</ul>
+</blockquote>
+
+<p>二、核心服务层(Core Services layer):
+<img src="../assets/28145814-65545d17ed1f4306beb91945ff6891ac.jpg" alt="" /></p>
+
+<blockquote><ul>
+<li>电话本(AddressBook.framework)</li>
+<li>核心基础框架(CoreFoundation.framework)</li>
+<li>CFNetwork(CFNetwork.framework)</li>
+<li>核心位置框架(CoreLocation.framework)</li>
+<li>安全框架(Security.framework)</li>
+<li>SQLite</li>
+<li>支持XML</li>
+</ul>
+</blockquote>
+
+<p>三、媒体层(Media layer):
+<img src="../assets/28150217-d5fbc9a8f17847348f8b16312d9f461c.jpg" alt="" /></p>
+
+<blockquote><ul>
+<li>图像技术(Graphics Technologies)</li>
+</ul>
+
+
+<blockquote><ol>
+<li>Quartz。核心图像框架(CoreGraphics.framework)</li>
+<li>核心动画（Core Animation）</li>
+<li>OpenGL ES</li>
+</ol>
+</blockquote>
+
+<ul>
+<li>音频技术(Audio Technologies)</li>
+</ul>
+
+
+<blockquote><ol>
+<li><p>核心音频（Core Audio Family）</p>
+
+<table>
+<thead>
+<tr>
+<th>框架(Framework) </th>
+<th> 服务(Service) </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CoreAudio.framework </td>
+<td>定义核心音频的音频数据类型</td>
+</tr>
+<tr>
+<td>AudioUnit.framework </td>
+<td>提供音频和流媒体文件的回放和录制，并且管理音频文件和播放提示声音</td>
+</tr>
+<tr>
+<td>AudioToolbox.framework </td>
+<td>提供使用内置音频单元服务，音频处理模块</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>OpenAL</p></li>
+</ol>
+</blockquote>
+
+<ul>
+<li>视频技术(Video Technologies)</li>
+</ul>
+</blockquote>
+
+<p>四、可触摸层(Cocoa Touch layer):</p>
+
+<p><img src="../assets/28150414-77cf9c9c79004c58a0a7e36d469b93fe.jpg" alt="" /></p>
+
+<blockquote><ul>
+<li>UIKit框架(UIKit.framework)</li>
+<li>基础框架(Foundation.framework)</li>
+<li>电话本UI框架(AddressBookUI.framework)</li>
+</ul>
+</blockquote>
+
+<p><a href="http://www.cnblogs.com/zhangmangyuan/archive/2013/03/28/iOS.html">参考资料</a></p>
+
+</section>
+<section align="right">
+<br/>
+<span>
+	<a  href="/how-to-solve-message-sent-to-deallocated-instance/" class="pageNav"  >上一篇</a>
+	&nbsp;&nbsp;&nbsp;
+	<a   class="pageNavInvalid"  >下一篇</a>
+</span>
+</section>
+
+	
+	<div class="ds-thread" />
+		
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"TonyYu2015"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+
+
+        </article>
+      </div>
+
+    <footer>
+        <p><small>
+            <a href="http://github.com/iOSBoy/NET/new/gh-pages/_posts" target="_blank" title="撰写文章">Po</a>wer<a href="http://github.com/iOSBoy/NET/edit/gh-pages/_posts/2015-05-10-ios-system-architecture.md" target="_blank" title="编辑页面">ed</a> by <a href="http://jekyllrb.com" target="_blank">Jekyll</a> @ <a href="http://github.com/iOSBoy/NET" target="_blank" title="项目主页">GitHub</a>
+             | <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/cn/" target="_blank" title="许可协议">©</a> 2014 - 2015 <a href="/about/">Tony</a>
+
+
+         </small></p>
+    </footer>
+
+    </div>
+  </body>
+</html>

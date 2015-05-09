@@ -10,7 +10,7 @@ layout: default
 <span class="categories">
   分类
   {% for cat in page.categories %}
-  <a href="/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>&nbsp;
+  <a href="/categories/#{{ cat }}" title="{{ cat }}">{{ cat | replace_first:'ios','iOS'}}</a>&nbsp;
   {% endfor %}
 </span>
 {% endif %}

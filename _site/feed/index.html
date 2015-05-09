@@ -7,25 +7,118 @@
     <title>iOSBoy</title>
     <link href="http://iosboy.github.io/feed/" rel="self" />
     <link href="http://iosboy.github.io" />
-    <lastBuildDate>2015-04-29T10:59:29+08:00</lastBuildDate>
+    <lastBuildDate>2015-05-10T00:12:19+08:00</lastBuildDate>
     <webMaster>taoyu.developer@gmail.com</webMaster>
     
     <item>
-      <title>如何打印一个菱形</title>
-      <link href="http://iosboy.github.io/how-to-pint-diamond/"/>
-      <pubDate>2015-04-29T00:00:00+08:00</pubDate>
+      <title>iOS System Architecture</title>
+      <link href="http://iosboy.github.io/ios-system-architecture/"/>
+      <pubDate>2015-05-10T00:00:00+08:00</pubDate>
       <author>Tony</author>
-      <guid>http://iosboy.github.io/how-to-pint-diamond</guid>
-      <content:encoded><![CDATA[
+      <guid>http://iosboy.github.io/ios-system-architecture</guid>
+      <content:encoded><![CDATA[<hr />
+
+<p>iOS 系统架构如图
+<img src="../assets/6D80D0FF-7C18-4BA8-83C9-F2FFEFB66218.png" alt="" />
+一、核心操作系统层(Core OS layer):
+<img src="../assets/28145516-73fbd86c5aaf41f4bc30c76a350452bf.jpg" alt="" /></p>
+
+<blockquote><ul>
+<li>Core OS是用FreeBSD和Mach所改写的Darwin</li>
+<li>提供了硬件驱动, 内存管理,程序管理,线程管理(POSIX),文件系统,网络(BSD Socket),标准输入输出等功能</li>
+</ul>
+</blockquote>
+
+<p>二、核心服务层(Core Services layer):
+<img src="../assets/28145814-65545d17ed1f4306beb91945ff6891ac.jpg" alt="" /></p>
+
+<blockquote><ul>
+<li>电话本(AddressBook.framework)</li>
+<li>核心基础框架(CoreFoundation.framework)</li>
+<li>CFNetwork(CFNetwork.framework)</li>
+<li>核心位置框架(CoreLocation.framework)</li>
+<li>安全框架(Security.framework)</li>
+<li>SQLite</li>
+<li>支持XML</li>
+</ul>
+</blockquote>
+
+<p>三、媒体层(Media layer):
+<img src="../assets/28150217-d5fbc9a8f17847348f8b16312d9f461c.jpg" alt="" /></p>
+
+<blockquote><ul>
+<li>图像技术(Graphics Technologies)</li>
+</ul>
+
+
+<blockquote><ol>
+<li>Quartz。核心图像框架(CoreGraphics.framework)</li>
+<li>核心动画（Core Animation）</li>
+<li>OpenGL ES</li>
+</ol>
+</blockquote>
+
+<ul>
+<li>音频技术(Audio Technologies)</li>
+</ul>
+
+
+<blockquote><ol>
+<li><p>核心音频（Core Audio Family）</p>
+
+<table>
+<thead>
+<tr>
+<th>框架(Framework) </th>
+<th> 服务(Service) </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CoreAudio.framework </td>
+<td>定义核心音频的音频数据类型</td>
+</tr>
+<tr>
+<td>AudioUnit.framework </td>
+<td>提供音频和流媒体文件的回放和录制，并且管理音频文件和播放提示声音</td>
+</tr>
+<tr>
+<td>AudioToolbox.framework </td>
+<td>提供使用内置音频单元服务，音频处理模块</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>OpenAL</p></li>
+</ol>
+</blockquote>
+
+<ul>
+<li>视频技术(Video Technologies)</li>
+</ul>
+</blockquote>
+
+<p>四、可触摸层(Cocoa Touch layer):</p>
+
+<p><img src="../assets/28150414-77cf9c9c79004c58a0a7e36d469b93fe.jpg" alt="" /></p>
+
+<blockquote><ul>
+<li>UIKit框架(UIKit.framework)</li>
+<li>基础框架(Foundation.framework)</li>
+<li>电话本UI框架(AddressBookUI.framework)</li>
+</ul>
+</blockquote>
+
+<p><a href="http://www.cnblogs.com/zhangmangyuan/archive/2013/03/28/iOS.html">参考资料</a></p>
 ]]></content:encoded>
     </item>
     
     <item>
-      <title>解决 message sent to deallocated instance</title>
-      <link href="http://iosboy.github.io/solve-message-sent-to-deallocated-instance/"/>
+      <title>解决 Message Sent to Deallocated Instance</title>
+      <link href="http://iosboy.github.io/how-to-solve-message-sent-to-deallocated-instance/"/>
       <pubDate>2015-02-09T15:12:02+08:00</pubDate>
       <author>Tony</author>
-      <guid>http://iosboy.github.io/solve-message-sent-to-deallocated-instance</guid>
+      <guid>http://iosboy.github.io/how-to-solve-message-sent-to-deallocated-instance</guid>
       <content:encoded><![CDATA[<h2>前言</h2>
 
 <p>iOS开发过程中经常遇到一个恶心的问题就是过度释放造成app奔溃。这种Crash出现的log信息量少。而且很难一眼看到问题出现在什么地方。唯一知道的信息就是这个Crash是因为内存管理不当过度释放的问题。这时候我们很多人（我也在其中）的解决方案时根据操作出现的奔溃来猜测可能时哪里的问题，然后去一行行review代码（体力活啊）。之前我一直用这种方法。这个方法在涉及到模块代码量不是很大的情况下还是计较有效的。但是一旦涉及到的代码量很大的情况比较复杂的情况下这种方法会让你抓狂。代码太多涉及到的文件很多你根本不知道哪里地方出问题了。在这种情况下你要想使用一行行review代码的方法那将花费你很多的时间还不一定能找到问题出在哪里。在这个过程中你会抓狂很多次，小伙伴们有没有。好了干货来了。接下来我们来看一下一种高效调试这种Cras的方法。</p>
